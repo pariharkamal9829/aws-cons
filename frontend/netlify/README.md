@@ -1,17 +1,12 @@
-Netlify Functions and Email forwarding
-
-This project includes a Netlify function at `netlify/functions/sendEmail.js` that forwards checkout submissions to an email address using SendGrid.
-
-Setup steps:
-
-1. In Netlify site settings -> Build & deploy -> Environment, add:
-   - `SENDGRID_API_KEY` = your SendGrid API key
-   - `SENDGRID_FROM` = verified sender email (e.g. no-reply@yourdomain.com)
-
-2. Deploy the site. The checkout form in the frontend will POST to `/.netlify/functions/sendEmail` and the function will forward the details to `kamlesh@webclickindia.site`.
-
 Netlify Forms
 
-The checkout form also includes Netlify Forms attributes (`data-netlify="true"`). Netlify will capture submissions in the site dashboard as well.
+This project uses Netlify Forms for `contact` and `checkout` submissions. No SendGrid, API keys, or serverless email forwarding are required.
 
-If you prefer not to use SendGrid, you can instead configure Netlify alerts or integrate with Zapier/Make to forward Netlify form submissions to an email address.
+How it works:
+
+- The forms include `data-netlify="true"` and `form-name` hidden inputs so Netlify captures submissions.
+- Configure Netlify site notifications (Build & deploy → Forms) or connect the form to third-party automations (Zapier/Make) to forward form submissions to email or other services.
+
+Deployment notes:
+
+- Keep the `netlify` folder for other helpers, but `netlify/functions/sendEmail.js` has been removed — Netlify will store the submissions and you can configure notifications in the Netlify dashboard.

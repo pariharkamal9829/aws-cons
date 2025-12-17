@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import PaymentFooter from './PaymentFooter';
-import { toast } from 'sonner';
+
 
 const CheckoutModal = ({ open, onClose, cart = [], onSuccess }) => {
   const [name, setName] = useState('');
@@ -20,37 +20,7 @@ const CheckoutModal = ({ open, onClose, cart = [], onSuccess }) => {
 
   if (!open) return null;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const certifications = cart.map(c => c.name).join(', ');
-
-    // Send to Netlify function which will forward email via SendGrid (env: SENDGRID_API_KEY)
-    try {
-      const body = { name, phone, email, amount, certifications, type: 'checkout', to: 'info@awspartnerx.cloud' };
-      const res = await fetch('/.netlify/functions/sendEmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      if (!res.ok) {
-        const text = await res.text().catch(() => 'Unknown server error');
-        console.error('sendEmail error:', text);
-        if (res.status === 404 || text.includes('not found')) {
-          toast.error('Server function not found. Opening mail client as fallback.');
-          window.location.href = `mailto:info@awspartnerx.cloud?subject=Order%20from%20site&body=${encodeURIComponent(certifications)}`;
-          return;
-        }
-        throw new Error(text || 'Failed to submit');
-      }
-
-      toast.success('Order submitted — we will contact you shortly');
-      onSuccess && onSuccess();
-      onClose();
-    } catch (err) {
-      console.error(err);
-      toast.error('Submission failed. The form is saved — please contact us.');
-    }
-  };
+  // Use native Netlify Forms for submission. Hidden inputs below include amount and certifications.
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -68,8 +38,10 @@ const CheckoutModal = ({ open, onClose, cart = [], onSuccess }) => {
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
             <input type="hidden" name="form-name" value="checkout" />
+            <input type="hidden" name="amount" value={amount} />
+            <input type="hidden" name="certifications" value={cart.map(c => c.name).join(', ')} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>

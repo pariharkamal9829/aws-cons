@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '../mockData';
-import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +11,7 @@ const Contact = () => {
     service: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
 
   const services = [
     'AWS Certification Vouchers',
@@ -31,48 +30,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const res = await fetch('/.netlify/functions/sendEmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'contact',
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          service: formData.service,
-          message: formData.message,
-          to: 'info@awspartnerx.cloud'
-        })
-      });
-
-      if (!res.ok) {
-        const text = await res.text().catch(() => 'Unknown server error');
-        console.error('sendEmail error:', text);
-        // fallback: open mail client if function unavailable
-        if (res.status === 404 || text.includes('not found')) {
-          toast.error('Server function not found. Opening mail client as fallback.');
-          window.location.href = `mailto:info@awspartnerx.cloud?subject=Contact%20from%20site&body=${encodeURIComponent(formData.message)}`;
-        } else {
-          toast.error('Failed to send message: ' + (text || 'server error'));
-        }
-        setIsSubmitting(false);
-        return;
-      }
-
-      toast.success('Thank you! Your inquiry has been submitted successfully. We will respond within 2-5 working days.');
-      setFormData({ name: '', email: '', company: '', service: '', message: '' });
-    } catch (err) {
-      console.error(err);
-      toast.error('Failed to submit. Please try again or email info@awspartnerx.cloud');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // Native Netlify Forms will handle submission and notifications.
 
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -107,7 +65,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Send us a Message
                 </h2>
-                <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-6">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" className="space-y-6">
                   <input type="hidden" name="form-name" value="contact" />
                   <p className="hidden">
                     <label>
@@ -202,20 +160,10 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-200"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Submitting...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5 mr-2" />
-                        Send Message
-                      </>
-                    )}
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
                   </button>
 
                 </form>
