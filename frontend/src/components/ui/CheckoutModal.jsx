@@ -38,7 +38,7 @@ const CheckoutModal = ({ open, onClose, cart = [], onSuccess }) => {
             </button>
           </div>
 
-          <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+          <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
             <input type="hidden" name="form-name" value="checkout" />
             <input type="hidden" name="amount" value={amount} />
             <input type="hidden" name="certifications" value={cart.map(c => c.name).join(', ')} />

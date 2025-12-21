@@ -43,8 +43,13 @@ const APNEnablement = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Become an AWS Advanced Tier Partner
+                Become an{" "}
+                <span className="text-orange-500">
+                  AWS Advanced / Premiere
+                </span>{" "}
+                Tier Partner
               </h2>
+
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
                 The AWS Partner Network (APN) is a global community of partners who leverage AWS to build solutions and services for customers. We help you navigate the journey from registration to Advanced Tier status.
               </p>

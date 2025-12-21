@@ -14,10 +14,10 @@ const Contact = () => {
   
 
   const services = [
-    'AWS Certification Vouchers',
-    'Exam Preparation Support',
     'APN Partner Registration',
     'Advanced Tier Enablement',
+    'Exam Preparation Support',
+    'AWS Certification Vouchers',
     'Partner Score Optimization',
     'General Inquiry'
   ];
@@ -65,7 +65,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Send us a Message
                 </h2>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" className="space-y-6">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" className="space-y-6">
                   <input type="hidden" name="form-name" value="contact" />
                   <p className="hidden">
                     <label>

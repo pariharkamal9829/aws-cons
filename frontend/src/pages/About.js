@@ -14,10 +14,10 @@ const About = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              About AWS CloudEdge Consulting
+              About AWS Parntner X Consulting
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Your trusted partner for AWS certification and APN enablement excellence
+              Your trusted partner for APN enablement excellence and AWS certification
             </p>
           </motion.div>
         </div>
@@ -149,15 +149,6 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               What We Do
             </h2>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 space-y-6">
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  AWS Certification Support
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  We provide official AWS certification exam vouchers at competitive prices and offer comprehensive exam preparation support. Our structured mentorship program helps professionals achieve their certification goals with confidence.
-                </p>
-              </div>
 
               <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
@@ -165,6 +156,16 @@ const About = () => {
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   We guide organizations through the AWS Partner Network journey, from initial registration to Advanced Tier status. With access to 20+ AWS certified professionals, we help align your team's capabilities with APN requirements, optimize partner scores, and maintain long-term partnership success.
+                </p>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  AWS Certification Support
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  We provide official AWS certification exam vouchers at competitive prices and offer comprehensive exam preparation support. Our structured mentorship program helps professionals achieve their certification goals with confidence.
                 </p>
               </div>
 

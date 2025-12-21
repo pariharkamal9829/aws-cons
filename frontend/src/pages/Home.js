@@ -215,8 +215,10 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Why Choose AWS CloudEdge?
+                 Why Choose AWS{" "}
+                 <span className="text-orange-500">Partner X</span>?
               </h2>
+
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                 We combine deep AWS expertise with proven enablement methodologies to accelerate your cloud success
               </p>

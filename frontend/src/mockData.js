@@ -149,12 +149,13 @@ export const certifications = [
 
 export const services = [
   {
-    id: 1,
-    title: "AWS Certification Vouchers",
-    description: "Get official AWS certification exam vouchers at competitive prices",
-    link: "/certifications"
+     id: 1,
+    title: "APN Partner Enablement",
+    description: "Achieve AWS APN Partner status with our expert guidance",
+    link: "/apn-enablement"
   },
   {
+    
     id: 2,
     title: "Exam Preparation Support",
     description: "Structured mentorship and exam readiness guidance",
@@ -162,11 +163,13 @@ export const services = [
   },
   {
     id: 3,
-    title: "APN Partner Enablement",
-    description: "Achieve AWS APN Partner status with our expert guidance",
-    link: "/apn-enablement"
+    title: "AWS Certification Vouchers",
+    description: "Get official AWS certification exam vouchers at competitive prices",
+    link: "/certifications"
+   
   }
 ];
+
 
 export const examPrepFeatures = [
   {

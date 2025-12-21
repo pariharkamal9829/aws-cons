@@ -49,12 +49,21 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="p-0 rounded-lg overflow-hidden w-8 h-8 bg-white dark:bg-gray-900 flex items-center justify-center">
-                <img src="/logos/awspartnerxlogo.png" alt="logo" className="w-7 h-7 object-contain" />
+                <img
+                  src="/logos/awspartnerxlogo.png"
+                  alt="AWS Partner X logo"
+                  className="w-7 h-7 object-contain"
+                />
               </div>
+
               <span className="font-bold text-lg text-white">
-                {companyInfo.name.split(' ')[0]} <span className="text-orange-500">{companyInfo.name.split(' ')[1]}</span>
+                {companyInfo.name.split(' ')[0]}{" "}
+                <span className="text-orange-500">
+                  {companyInfo.name.split(' ').slice(1).join(' ')}
+                </span>
               </span>
             </div>
+
             <p className="text-sm text-gray-400 mb-4">
               Trusted AWS consultancy delivering certification enablement and APN partner growth solutions.
             </p>
@@ -89,9 +98,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/certifications" className="text-sm hover:text-orange-500 transition-colors duration-200">
-                  Certifications
+                <Link to="/apn-enablement" className="text-sm hover:text-orange-500 transition-colors duration-200">
+                  APN Enablement
                 </Link>
+                
               </li>
               <li>
                 <Link to="/exam-prep" className="text-sm hover:text-orange-500 transition-colors duration-200">
@@ -99,8 +109,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/apn-enablement" className="text-sm hover:text-orange-500 transition-colors duration-200">
-                  APN Enablement
+                <Link to="/certifications" className="text-sm hover:text-orange-500 transition-colors duration-200">
+                  Certifications
                 </Link>
               </li>
             </ul>
@@ -109,9 +119,9 @@ const Footer = () => {
           {/* Services */}
           <MobileCollapsible title="Services">
             <ul className="space-y-2">
+              <li className="text-sm">APN Partner Registration</li>
               <li className="text-sm">AWS Certification Vouchers</li>
               <li className="text-sm">Exam Preparation Support</li>
-              <li className="text-sm">APN Partner Registration</li>
               <li className="text-sm">Partner Score Optimization</li>
             </ul>
           </MobileCollapsible>

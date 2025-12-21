@@ -43,12 +43,21 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="p-0 rounded-lg overflow-hidden w-10 h-10 bg-white dark:bg-gray-900 flex items-center justify-center">
-              <img src="/logos/awspartnerxlogo.png" alt="logo" className="w-9 h-9 object-contain" />
+              <img
+                src="/logos/awspartnerxlogo.png"
+                alt="AWS Partner X logo"
+                className="w-9 h-9 object-contain"
+              />
             </div>
+
             <span className="font-bold text-lg text-gray-900 dark:text-white">
-              {companyInfo.name.split(' ')[0]} <span className="text-orange-500">{companyInfo.name.split(' ')[1]}</span>
+              {companyInfo.name.split(' ')[0]}{" "}
+              <span className="text-orange-500">
+                {companyInfo.name.split(' ').slice(1).join(' ')}
+              </span>
             </span>
           </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
