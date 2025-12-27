@@ -53,6 +53,7 @@ const Footer = () => {
                   src="/logos/awspartnerxlogo.png"
                   alt="AWS Partner X logo"
                   className="w-7 h-7 object-contain"
+                  loading="lazy"
                 />
               </div>
 

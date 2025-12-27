@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://awspartnerx.cloud/sitemap.xml
+Host: awspartnerx.cloud

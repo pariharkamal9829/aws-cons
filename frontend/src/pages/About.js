@@ -1,9 +1,20 @@
 import React from 'react';
+import SEO from '../lib/SEO';
 import { motion } from 'framer-motion';
 import { Award, Target, Users, Shield, Heart, Zap } from 'lucide-react';
 
 const About = () => {
   return (
+    <>
+      <SEO
+        title="About AWS Partner X — APN Enablement & Consulting"
+        description="AWS Partner X accelerates APN enablement and cloud transformation with AWS consulting, certification support, and architecture services."
+        pathname="/about"
+        breadcrumbs={[
+          { name: 'Home', item: 'https://awspartnerx.cloud/' },
+          { name: 'About', item: 'https://awspartnerx.cloud/about' }
+        ]}
+      />
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
@@ -14,7 +25,7 @@ const About = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              About AWS Parntner X Consulting
+              About AWS Partner X Consulting
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Your trusted partner for APN enablement excellence and AWS certification
@@ -297,6 +308,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

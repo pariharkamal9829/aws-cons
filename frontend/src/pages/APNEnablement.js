@@ -3,10 +3,20 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Building2, Award, TrendingUp, Users, Shield, Target, CheckCircle2, ArrowRight } from 'lucide-react';
 import { apnServices } from '../mockData';
+import SEO from '../lib/SEO';
 
 const APNEnablement = () => {
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEO
+        title="AWS APN Partner Enablement & Consulting"
+        description="Comprehensive APN enablement, partner registration, certification mapping and partner score optimization services to accelerate your AWS partnership."
+        pathname="/apn-enablement"
+        breadcrumbs={[
+          { name: 'Home', item: 'https://awspartnerx.cloud/' },
+          { name: 'APN Enablement', item: 'https://awspartnerx.cloud/apn-enablement' }
+        ]}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +30,7 @@ const APNEnablement = () => {
               <span>Enterprise Partner Solutions</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              APN Partner Enablement
+              AWS APN Partner Enablement
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Comprehensive consulting to achieve and maintain AWS Partner Network status

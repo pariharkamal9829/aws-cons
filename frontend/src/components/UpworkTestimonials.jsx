@@ -29,7 +29,7 @@ const UpworkTestimonials = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
           <div className="flex items-center gap-3">
-            <img src="/logos/upwork.png" alt="Upwork" className="h-8" />
+            <img src="/logos/upwork.png" alt="Upwork" className="h-8" loading="lazy" />
             <h3 className="text-xl font-bold">Trusted by Global Clients on Upwork</h3>
           </div>
           <div className="flex items-center gap-2">
@@ -57,7 +57,7 @@ const UpworkTestimonials = () => {
               >
                 <div className="flex items-start justify-between mb-3 gap-3">
                   <div className="flex items-center gap-3">
-                    <img src="/logos/upwork.png" alt="Upwork" className="h-8 w-8 object-contain" />
+                    <img src="/logos/upwork.png" alt="Upwork" className="h-8 w-8 object-contain" loading="lazy" />
                     <div>
                       <div className="font-semibold text-gray-900 dark:text-white">{s.title}</div>
                       <div className="text-xs text-gray-500">{s.client}</div>

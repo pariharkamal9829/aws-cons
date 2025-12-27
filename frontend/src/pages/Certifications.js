@@ -5,6 +5,7 @@ import { certifications } from '../mockData';
 import CheckoutModal from '../components/ui/CheckoutModal';
 import CertificationsMarquee from '../components/CertificationsMarquee';
 import { toast } from 'sonner';
+import SEO from '../lib/SEO';
 
 const Certifications = () => {
   const [cart, setCart] = useState([]);
@@ -45,6 +46,16 @@ const Certifications = () => {
   };
 
   return (
+    <>
+      <SEO
+        title="AWS Certification Vouchers & Exam Prep"
+        description="Purchase AWS exam vouchers and get structured certification preparation, mentorship, and exam support from experienced AWS professionals."
+        pathname="/certifications"
+        breadcrumbs={[
+          { name: 'Home', item: 'https://awspartnerx.cloud/' },
+          { name: 'Certifications', item: 'https://awspartnerx.cloud/certifications' }
+        ]}
+      />
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <CertificationsMarquee />
@@ -58,7 +69,7 @@ const Certifications = () => {
             AWS Certification Vouchers
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Get official AWS certification exam vouchers at competitive prices
+            Purchase authenticated AWS exam vouchers and access structured exam preparation support at competitive prices.
           </p>
         </motion.div>
 
@@ -96,6 +107,7 @@ const Certifications = () => {
                       <img
                         src={cert.badge}
                         alt={cert.name}
+                        loading="lazy"
                         className="w-32 h-32 object-contain"
                       />
                     </div>
@@ -203,6 +215,7 @@ const Certifications = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

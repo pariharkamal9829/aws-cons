@@ -20,6 +20,7 @@ const CertificationsMarquee = () => {
             <img
               src={c.badge}
               alt={c.name}
+              loading="lazy"
               className="h-20 object-contain transform transition-transform duration-200 hover:scale-105"
             />
           </div>

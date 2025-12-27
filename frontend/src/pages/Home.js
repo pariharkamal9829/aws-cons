@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../lib/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Award, Users, Target, CheckCircle2 } from 'lucide-react';
@@ -30,6 +31,12 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+      <SEO
+        title="AWS APN Partner Enablement & Cloud Consulting"
+        description="AWS Partner X provides APN enablement, AWS consulting, DevOps, and cloud architecture services to accelerate partner success."
+        pathname="/"
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -81,9 +88,10 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
-              AWS Certification &{' '}
-              <span className="text-orange-500">APN Partner</span>{' '}
-              Enablement
+              AWS APN Partner{' '}
+            <span className="text-orange-500">Enablement</span>{' '}
+            & Cloud Consulting
+
             </motion.h1>
 
             <motion.p
@@ -92,7 +100,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto"
             >
-              Accelerate your cloud journey with expert AWS certification support and comprehensive APN partner enablement solutions
+              Accelerate your AWS Partner Network (APN) journey with practical enablement, DevOps consulting, and cloud architecture that deliver measurable outcomes.
             </motion.p>
 
             <motion.div
@@ -305,6 +313,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import SEO from '../lib/SEO';
 import { companyInfo } from '../mockData';
 
 const Contact = () => {
@@ -33,7 +34,17 @@ const Contact = () => {
   // Native Netlify Forms will handle submission and notifications.
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <>
+      <SEO
+        title="Contact AWS Partner X — APN Enablement & Consulting"
+        description="Contact AWS Partner X for APN enablement, AWS consulting, DevOps, and cloud architecture services. We'll respond quickly to discuss your needs."
+        pathname="/contact"
+        breadcrumbs={[
+          { name: 'Home', item: 'https://awspartnerx.cloud/' },
+          { name: 'Contact', item: 'https://awspartnerx.cloud/contact' }
+        ]}
+      />
+      <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +54,7 @@ const Contact = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Get In Touch
+              Contact AWS Partner X — APN Enablement & Consulting
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -258,6 +269,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

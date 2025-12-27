@@ -25,7 +25,8 @@ const BadgesMarquee = () => {
           >
             <img
               src={b}
-              alt={`badge-${i}`}
+              alt={`Partner badge ${i + 1}`}
+              loading="lazy"
               className="h-28 sm:h-24 md:h-28 w-auto object-contain bg-transparent p-0 transition-transform duration-200 ease-linear dark:bg-transparent"
             />
           </div>

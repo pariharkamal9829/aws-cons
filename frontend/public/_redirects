@@ -1,1 +1,5 @@
 /*    /index.html   200
+
+# Optional: redirect www to non-www (Netlify may handle domain redirects in dashboard)
+# Example (uncomment to enable):
+# https://www.awspartnerx.cloud/* https://awspartnerx.cloud/:splat 301!

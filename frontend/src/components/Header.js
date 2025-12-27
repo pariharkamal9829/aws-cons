@@ -47,6 +47,7 @@ const Header = () => {
                 src="/logos/awspartnerxlogo.png"
                 alt="AWS Partner X logo"
                 className="w-9 h-9 object-contain"
+                loading="lazy"
               />
             </div>
 

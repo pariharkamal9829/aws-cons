@@ -10,10 +10,10 @@ const PaymentFooter = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <img src="/logos/upi.png" alt="UPI" className="h-6" />
-          <img src="/logos/paytm.png" alt="Paytm" className="h-6" />
-          <img src="/logos/phonepe.png" alt="PhonePe" className="h-6" />
-          <img src="/logos/gpay.png" alt="GPay" className="h-6" />
+          <img src="/logos/upi.png" alt="UPI" className="h-6" loading="lazy" />
+          <img src="/logos/paytm.png" alt="Paytm" className="h-6" loading="lazy" />
+          <img src="/logos/phonepe.png" alt="PhonePe" className="h-6" loading="lazy" />
+          <img src="/logos/gpay.png" alt="GPay" className="h-6" loading="lazy" />
         </div>
       </div>
     </div>

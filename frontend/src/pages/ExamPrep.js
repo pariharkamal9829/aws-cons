@@ -3,10 +3,20 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BookOpen, Target, FileCheck, Calendar, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import { examPrepFeatures } from '../mockData';
+import SEO from '../lib/SEO';
 
 const ExamPrep = () => {
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEO
+        title="AWS Exam Preparation & Certification Support"
+        description="Structured AWS exam preparation, mentorship, and mock tests from experienced AWS certified professionals to maximize your success."
+        pathname="/exam-prep"
+        breadcrumbs={[
+          { name: 'Home', item: 'https://awspartnerx.cloud/' },
+          { name: 'Exam Prep', item: 'https://awspartnerx.cloud/exam-prep' }
+        ]}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-orange-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +30,7 @@ const ExamPrep = () => {
               <span>Expert-Led Preparation</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Exam Preparation & Success Support
+              AWS Exam Preparation & Success Support
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Structured mentorship and comprehensive guidance to maximize your exam success

@@ -60,7 +60,7 @@ const CheckoutModal = ({ open, onClose, cart = [], onSuccess }) => {
                 <div className="flex flex-wrap gap-2">
                   {cart.map(item => (
                     <div key={item.id} className="flex items-center space-x-3 bg-gray-50 dark:bg-gray-800 p-2 rounded">
-                      <img src={item.badge} alt={item.name} className="w-10 h-10 object-contain" />
+                      <img src={item.badge} alt={item.name} className="w-10 h-10 object-contain" loading="lazy" />
                       <div>
                         <div className="text-sm font-medium">{item.name}</div>
                         <div className="text-xs text-orange-500">₹{item.price.toLocaleString()}</div>
